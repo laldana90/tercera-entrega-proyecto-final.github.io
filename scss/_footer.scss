@@ -1,0 +1,19 @@
+/*************************** FOOTER **********************************/
+
+.footer {
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  border: 3px solid $color-principal;
+  border-radius: 10px;
+  height: 200px;
+}
+
+/****** EXTEND ********/
+.tituloFooter {
+  @extend .navbar-brand;
+}
+
+
+

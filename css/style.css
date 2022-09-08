@@ -1,0 +1,373 @@
+/************************** HEADER *********************************/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+.header {
+  border: 3px solid blueviolet;
+  border-radius: 10px;
+  background-color: black; }
+
+.navbar-brand, .tituloFooter {
+  color: greenyellow;
+  font-size: 3vw;
+  text-shadow: 3px 3px blueviolet; }
+  .navbar-brand:hover, .tituloFooter:hover {
+    color: greenyellow;
+    text-shadow: none; }
+
+h1 {
+  color: greenyellow;
+  font-size: 10vw;
+  text-align: center;
+  margin: 10px;
+  text-shadow: 4px 4px blueviolet; }
+
+.tiuloCar {
+  display: inline-block;
+  background-color: black;
+  color: greenyellow;
+  font-size: 70px;
+  text-shadow: 5px 5px blueviolet; }
+
+h2 {
+  color: black; }
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  padding-bottom: 15px;
+  text-decoration: none; }
+
+.nav-link {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: left;
+  text-decoration: none;
+  color: blueviolet;
+  font-size: 20px; }
+  .nav-link:hover {
+    border: 2px solid greenyellow;
+    border-radius: 15px;
+    color: blueviolet;
+    box-shadow: 3px 3px greenyellow; }
+
+.imgCar {
+  height: 500px;
+  object-fit: cover; }
+
+.navbar-toggler {
+  color: white;
+  background-color: white; }
+
+.carousel-control-prev-icon {
+  height: 100px;
+  width: 100px;
+  outline: greenyellow;
+  background-color: blueviolet;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid greenyellow; }
+
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: greenyellow;
+  background-color: blueviolet;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid greenyellow; }
+
+/*************************** FOOTER **********************************/
+.footer {
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  border: 3px solid blueviolet;
+  border-radius: 10px;
+  height: 200px; }
+
+/****** EXTEND ********/
+/*************************** BODY *******************************/
+body {
+  background-color: black;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  padding: 5px;
+  margin: 5px; }
+
+.cardContainer#blur.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none; }
+
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn); } }
+
+.card {
+  position: relative;
+  z-index: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px; }
+  .card::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: blueviolet;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(blueviolet, blueviolet), linear-gradient(greenyellow, greenyellow);
+    animation: rotate 4s linear infinite; }
+  .card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 20px;
+    animation: opacityChange 2s infinite alternate; }
+
+@keyframes opacityChange {
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: .99; } }
+
+.card img {
+  margin-top: 15px; }
+
+.btn {
+  background-color: black;
+  color: blueviolet; }
+  .btn:hover {
+    background-color: black;
+    color: blueviolet; }
+
+.return {
+  border: 3px solid greenyellow;
+  border-radius: 10px;
+  margin: 15px;
+  text-align: center;
+  background-image: url(../images/colorful6.jpg);
+  background-size: cover; }
+
+#popup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  border: 3px solid greenyellow;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s; }
+
+#popup.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  background-color: black;
+  color: blueviolet; }
+
+.cardContainer img {
+  border-radius: 20px; }
+  .cardContainer img:hover {
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 8px 8px gray;
+    width: 95%;
+    margin: auto;
+    padding: auto; }
+
+.cardContainer .btn:hover {
+  box-shadow: 5px 5px blueviolet; }
+
+.gridIndex section {
+  border: 3px solid greenyellow;
+  border-radius: 10px;
+  margin: 10px;
+  background-image: url(../images/colorful6.jpg); }
+
+.coolAnimation {
+  display: flex;
+  font-size: 5vw;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+  transform-style: preserve-3d;
+  animation: animateX 15s linear infinite;
+  font-weight: 900;
+  color: greenyellow;
+  padding: 0 10px;
+  transform-style: preserve-3d;
+  text-shadow: 9px 9px blueviolet;
+  transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(100px); }
+
+@keyframes animateX {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotate(10deg); }
+  100% {
+    transform: perspective(1000px) rotateX(360deg) rotate(10deg); } }
+
+.introDos {
+  text-align: center;
+  font-size: 2vw;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  text-shadow: 3px 3px blueviolet;
+  text-decoration: solid;
+  animation-duration: 5s;
+  animation-name: slideinRight; }
+
+@keyframes slideinRight {
+  from {
+    margin-right: 0%;
+    width: 300%; }
+  to {
+    margin-right: 100%;
+    width: 100%; } }
+
+/********* MAP GET **********/
+.quotesMain {
+  text-align: center;
+  font-size: 3vw;
+  color: greenyellow;
+  text-shadow: 3px 3px blueviolet; }
+
+.quotes {
+  text-align: center;
+  font-size: 1.5vw;
+  color: greenyellow;
+  text-shadow: 3px 3px blueviolet;
+  /*   -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s; */
+  animation-duration: 9.9s;
+  animation-name: slideinLeft; }
+
+@keyframes slideinLeft {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  to {
+    margin-left: 0%;
+    width: 100%; } }
+
+/* @-webkit-keyframes slide {
+  from {
+    left: -50%;
+
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes slide {
+  from {
+    left: -50%;
+
+  }
+
+  to {
+    left: 100%;
+  }
+} */
+.gridContact section {
+  border-radius: 10px;
+  justify-content: center; }
+
+/************* MIXIN *********/
+.section9 {
+  color: blueviolet;
+  border: 3px solid greenyellow;
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+  text-shadow: 3px 3px black; }
+
+.section10 {
+  color: blueviolet;
+  border: 3px solid greenyellow;
+  font-size: 25px;
+  padding: 1%;
+  text-shadow: 3px 3px black;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 30%;
+  justify-content: center; }
+  .section10 label {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    padding: 5px; }
+  .section10 input {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    margin: 10px;
+    flex-wrap: wrap; }
+
+.contactus {
+  background-image: url(../images/colorful1.jpg);
+  background-size: auto;
+  border: 3px solid greenyellow;
+  border-radius: 15px;
+  margin: 15px 3px 15px 3px; }
+
+@media only screen and (max-width: 1024px) {
+  .card-title {
+    font-size: 20px; }
+  .gridContact {
+    gap: 35px;
+    grid-template-areas: "header" "nueve" "diez" "return" "footer"; }
+  .section10 {
+    width: 75%; }
+  h2 {
+    font-size: 40px; } }
+
+@media only screen and (max-width: 640px) {
+  .card-title {
+    font-size: 35%;
+    text-align: left; }
+  .btn {
+    font-size: 50%;
+    margin: 0;
+    top: 70%; }
+  h2 {
+    font-size: 40px; }
+  .gridContact {
+    gap: 35px;
+    grid-template-areas: "header" "nueve" "diez" "return" "footer"; }
+  .section9 {
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
+  .section10 {
+    border: none;
+    font-size: 15px; } }
