@@ -7,69 +7,77 @@ body {
   margin: 5px;
 }
 
-
+.series {
+  color: $color-secundario;
+  font-size: 10vw;
+  text-align: center;
+  margin: 10px;
+  text-shadow: 4px 4px $color-principal;
+}
 .cardContainer#blur.active {
   filter: blur(20px);
   pointer-events: none;
   user-select: none;
 }
 
-
-*, *::before, *::after {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 @keyframes rotate {
-	100% {
-		transform: rotate(1turn);
-	}
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 .card {
-	position: relative;
-	z-index: 0;
-	border-radius: 20px;
-	overflow: hidden;
-	padding: 10px;
+  position: relative;
+  z-index: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 10px;
   margin: 10px;
-	
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -2;
-		left: -50%;
-		top: -50%;
-		width: 200%;
-		height: 200%;
-		background-color: $color-principal;
-		background-repeat: no-repeat;
-		background-size: 50% 50%, 50% 50%;
-		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-		background-image: linear-gradient($color-principal, $color-principal), linear-gradient($color-secundario, $color-secundario);
-		animation: rotate 4s linear infinite;
-	}
-	
-	&::after {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		left: 6px;
-		top: 6px;
-		width: calc(100% - 12px);
-		height: calc(100% - 12px);
-		background: white;
-		border-radius: 20px;
-		animation: opacityChange 2s infinite alternate;
-	}
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: $color-principal;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient($color-principal, $color-principal),
+      linear-gradient($color-secundario, $color-secundario);
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 20px;
+    animation: opacityChange 2s infinite alternate;
+  }
 }
 
 @keyframes opacityChange {
-	50% {
-		opacity:1;
-	}
-	100% {
-		opacity: .99;
-	}
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.99;
+  }
 }
 
 .card {
@@ -94,7 +102,6 @@ body {
   text-align: center;
   background-image: url(../images/colorful6.jpg);
   background-size: cover;
-  
 }
 #popup {
   position: fixed;
@@ -151,14 +158,12 @@ body {
     border-radius: 10px;
     margin: 10px;
     background-image: url(../images/colorful6.jpg);
-    
- 
   }
 }
 
 .coolAnimation {
   display: flex;
-  font-size: 5vw;
+
   justify-content: center;
   align-items: center;
   margin: 10px;
@@ -167,14 +172,16 @@ body {
   animation: animateX 15s linear infinite;
   font-weight: 900;
   color: $color-secundario;
-  
-  
   padding: 0 10px;
   transform-style: preserve-3d;
   text-shadow: 9px 9px $color-principal;
-  transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(100px);
+  transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg))
+    translateZ(100px);
 }
 
+.intro {
+  font-size: 6vw;
+}
 
 @keyframes animateX {
   0% {
@@ -185,8 +192,6 @@ body {
     transform: perspective(1000px) rotateX(360deg) rotate(10deg);
   }
 }
-
-
 
 .introDos {
   text-align: center;
@@ -214,14 +219,17 @@ body {
 
 /********* MAP GET **********/
 
-$quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
+$quotesEstilo: (
+  txtAlgn: center,
+  tamFuente: 3vw,
+  color: $color-secundario,
+);
 
 .quotesMain {
   text-align: map-get($quotesEstilo, txtAlgn);
   font-size: map-get($quotesEstilo, tamFuente);
   color: map-get($quotesEstilo, color);
   text-shadow: 3px 3px $color-principal;
-
 }
 
 .quotes {
@@ -229,7 +237,7 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
   font-size: 1.5vw;
   color: $color-secundario;
   text-shadow: 3px 3px $color-principal;
-/*   -webkit-animation: slide 0.5s forwards;
+  /*   -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 2s;
   animation: slide 0.5s forwards;
   animation-delay: 2s; */
@@ -248,7 +256,6 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
     width: 100%;
   }
 }
-
 
 .gridContact {
   section {
@@ -269,6 +276,11 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
 
 .section9 {
   @include ctcFrame;
+
+  p {
+    color: $color-principal;
+    text-shadow: 3px 3px black;
+  }
 }
 
 .section10 {
@@ -296,6 +308,11 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
     margin: 10px;
     flex-wrap: wrap;
   }
+
+  h2 {
+    color: $color-principal;
+    text-shadow: 3px 3px black;
+  }
 }
 
 .contactus {
@@ -317,7 +334,7 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
     width: 75%;
   }
 
-   h2 {
+  h2 {
     font-size: 40px;
   }
 }
@@ -351,5 +368,5 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
 
   #popup.active {
     width: 85%;
-}
+  }
 }

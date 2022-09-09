@@ -24,8 +24,10 @@ h1 {
   display: inline-block;
   background-color: black;
   color: greenyellow;
-  font-size: 70px;
-  text-shadow: 5px 5px blueviolet; }
+  text-shadow: 5px 5px blueviolet;
+  font-size: 5vw;
+  text-align: center;
+  margin: 10px; }
 
 h2 {
   color: black; }
@@ -95,12 +97,21 @@ body {
   padding: 5px;
   margin: 5px; }
 
+.series {
+  color: greenyellow;
+  font-size: 10vw;
+  text-align: center;
+  margin: 10px;
+  text-shadow: 4px 4px blueviolet; }
+
 .cardContainer#blur.active {
   filter: blur(20px);
   pointer-events: none;
   user-select: none; }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box; }
 
 @keyframes rotate {
@@ -115,7 +126,7 @@ body {
   padding: 10px;
   margin: 10px; }
   .card::before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -2;
     left: -50%;
@@ -129,7 +140,7 @@ body {
     background-image: linear-gradient(blueviolet, blueviolet), linear-gradient(greenyellow, greenyellow);
     animation: rotate 4s linear infinite; }
   .card::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     left: 6px;
@@ -144,7 +155,7 @@ body {
   50% {
     opacity: 1; }
   100% {
-    opacity: .99; } }
+    opacity: 0.99; } }
 
 .card img {
   margin-top: 15px; }
@@ -213,7 +224,6 @@ body {
 
 .coolAnimation {
   display: flex;
-  font-size: 5vw;
   justify-content: center;
   align-items: center;
   margin: 10px;
@@ -226,6 +236,9 @@ body {
   transform-style: preserve-3d;
   text-shadow: 9px 9px blueviolet;
   transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(100px); }
+
+.intro {
+  font-size: 6vw; }
 
 @keyframes animateX {
   0% {
@@ -291,6 +304,9 @@ body {
   font-size: 30px;
   margin: 20px;
   text-shadow: 3px 3px black; }
+  .section9 p {
+    color: blueviolet;
+    text-shadow: 3px 3px black; }
 
 .section10 {
   color: blueviolet;
@@ -315,6 +331,9 @@ body {
     justify-items: center;
     margin: 10px;
     flex-wrap: wrap; }
+  .section10 h2 {
+    color: blueviolet;
+    text-shadow: 3px 3px black; }
 
 .contactus {
   background-image: url(../images/colorful1.jpg);
