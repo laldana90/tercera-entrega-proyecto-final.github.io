@@ -117,7 +117,13 @@ body {
   opacity: 1;
   transition: 0.5s;
   background-color: black;
-  color: $color-principal;
+  color: $color-secundario;
+  text-shadow: 3px 3px $color-principal;
+}
+
+#popup a {
+  color: $color-secundario;
+  text-shadow: 3px 3px $color-principal;
 }
 
 .cardContainer {
@@ -243,28 +249,6 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
   }
 }
 
-/* @-webkit-keyframes slide {
-  from {
-    left: -50%;
-
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes slide {
-  from {
-    left: -50%;
-
-  }
-
-  to {
-    left: 100%;
-  }
-} */
-
 
 .gridContact {
   section {
@@ -364,4 +348,8 @@ $quotesEstilo: (txtAlgn: center, tamFuente: 3vw, color: $color-secundario);
     border: none;
     font-size: 15px;
   }
+
+  #popup.active {
+    width: 85%;
+}
 }
